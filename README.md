@@ -344,6 +344,14 @@ class Estadio
          }
      }
 
+                Console.WriteLine("Te mostramos las zonas disponibles y sus respectivos precios");
+                Console.WriteLine();
+                Console.WriteLine(zonas[0] + " " + "$62");
+                Console.WriteLine(zonas[1] + "  " + "$75");
+                Console.WriteLine(zonas[2] + " " + "$80");
+                Console.WriteLine();
+                Console.WriteLine("Seleccione la zona en la que desea reservar su asiento:");
+                eleccion = int.Parse(Console.ReadLine());
 
                 }
 
