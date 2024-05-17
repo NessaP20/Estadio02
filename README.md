@@ -28,34 +28,6 @@ class Estadio
 
         Console.WriteLine("Selecciona que artista deseas ir a ver en concierto");
         elegir = int.Parse(Console.ReadLine());
-        switch (elegir)
-{
-    case 1:
-
-        while (entradas <= 0)
-        {
-            Console.WriteLine("Ingrese el número de asientos que desea reservar");
-            entradas = int.Parse(Console.ReadLine());
-
-            if (entradas <= 0)
-            {
-                Console.WriteLine("Número invalido, por favor ingrese otro valor");
-
-            }
-            else
-            {
-                Console.WriteLine("Usted a reservado" + " " + entradas + "  " + "entradas");
-            }
-        }
-
-        Console.WriteLine("Te mostramos las zonas disponibles y sus respectivos precios");
-        Console.WriteLine();
-        Console.WriteLine(zonas[0] + " " + "$62");
-        Console.WriteLine(zonas[1] + "  " + "$75");
-        Console.WriteLine(zonas[2] + " " + "$80");
-        Console.WriteLine();
-        Console.WriteLine("Seleccione la zona en la que desea reservar su asiento:");
-        eleccion = int.Parse(Console.ReadLine());
 
         while (elegir < 1 || elegir > artistas.Length)
         {
@@ -64,7 +36,36 @@ class Estadio
             elegir = int.Parse(Console.ReadLine());
         }
 
-        switch (eleccion)
+        switch (elegir)
+        {
+            case 1:
+
+                while (entradas <= 0)
+                {
+                    Console.WriteLine("Ingrese el número de asientos que desea reservar");
+                    entradas = int.Parse(Console.ReadLine());
+
+                    if (entradas <= 0)
+                    {
+                        Console.WriteLine("Número invalido, por favor ingrese otro valor");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Usted a reservado" + " " + entradas + "  " + "entradas");
+                    }
+                }
+
+                Console.WriteLine("Te mostramos las zonas disponibles y sus respectivos precios");
+                Console.WriteLine();
+                Console.WriteLine(zonas[0] + " " + "$62");
+                Console.WriteLine(zonas[1] + "  " + "$75");
+                Console.WriteLine(zonas[2] + " " + "$80");
+                Console.WriteLine();
+                Console.WriteLine("Seleccione la zona en la que desea reservar su asiento:");
+                eleccion = int.Parse(Console.ReadLine());
+
+                switch (eleccion)
                 {
                     case 1:
 
@@ -154,7 +155,7 @@ class Estadio
 
                         break;
 
-                     case 2:
+                    case 2:
                         {
                             for (int i = 0; i < 5; i++)
                             {
@@ -250,6 +251,7 @@ class Estadio
                                     asiento[i, j] = '*';
                                 }
                             }
+
                             Console.WriteLine("Estado de los asientos:");
                             Console.WriteLine("  1 2 3 4 5 ");
 
@@ -326,23 +328,30 @@ class Estadio
 
                             }
                         }
-                         case 2:
 
-     while (entradas <= 0)
-     {
-         Console.WriteLine("Ingrese el número de asientos que desea reservar");
-         entradas = int.Parse(Console.ReadLine());
+                }
 
-         if (entradas <= 0)
-         {
-             Console.WriteLine("Número invalido, por favor ingrese otro valor");
+                break;
 
-         }
-         else
-         {
-             Console.WriteLine("Usted a reservado" + " " + entradas + "  " + "entradas");
-         }
-     }
+
+
+            case 2:
+
+                while (entradas <= 0)
+                {
+                    Console.WriteLine("Ingrese el número de asientos que desea reservar");
+                    entradas = int.Parse(Console.ReadLine());
+
+                    if (entradas <= 0)
+                    {
+                        Console.WriteLine("Número invalido, por favor ingrese otro valor");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Usted a reservado" + " " + entradas + "  " + "entradas");
+                    }
+                }
 
                 Console.WriteLine("Te mostramos las zonas disponibles y sus respectivos precios");
                 Console.WriteLine();
@@ -352,10 +361,6 @@ class Estadio
                 Console.WriteLine();
                 Console.WriteLine("Seleccione la zona en la que desea reservar su asiento:");
                 eleccion = int.Parse(Console.ReadLine());
-
-                }
-
-                break;
 
                 switch (eleccion)
                 {
@@ -447,7 +452,7 @@ class Estadio
 
                         break;
 
-                         case 2:
+                    case 2:
                         {
                             for (int i = 0; i < 5; i++)
                             {
@@ -630,7 +635,3 @@ class Estadio
         }
     }
 }
-
-
-    
-
