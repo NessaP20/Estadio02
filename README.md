@@ -154,3 +154,181 @@ class Estadio
 
                         break;
 
+                     case 2:
+                        {
+                            for (int i = 0; i < 5; i++)
+                            {
+                                for (int j = 0; j < 8; j++)
+                                {
+                                    asiento[i, j] = '*';
+                                }
+                            }
+
+                            Console.WriteLine("Estado de los asientos:");
+                            Console.WriteLine("  1 2 3 4 5 6 7 8 ");
+
+                            for (int i = 0; i < 5; i++)
+                            {
+                                Console.Write((char)('A' + i) + " ");
+                                for (int j = 0; j < 8; j++)
+                                {
+                                    Console.Write(asiento[i, j] + " ");
+                                }
+                                Console.WriteLine();
+                            }
+
+                            while (true)
+                            {
+                                Console.WriteLine("\nIngrese los asientos que desea seleccionar separados por comas (por ejemplo, A3,A4,B5,C6):");
+                                string input = Console.ReadLine().ToUpper();
+
+                                string[] asientosSeleccionados = input.Split(',');
+
+                                if (asientosSeleccionados.Length != entradas)
+                                {
+                                    Console.WriteLine("Debe seleccionar exactamente " + entradas + " asientos.");
+                                    continue;
+                                }
+
+                                for (int k = 0; k < asientosSeleccionados.Length; k++)
+                                {
+                                    string asientoSeleccionado = asientosSeleccionados[k];
+
+                                    if (asientoSeleccionado.Length != 2 || !char.IsLetter(asientoSeleccionado[0]) || !char.IsDigit(asientoSeleccionado[1]))
+                                    {
+                                        Console.WriteLine("Entrada no válida. Por favor, ingrese los asientos en el formato correcto (A-E1-5).");
+                                        continue;
+                                    }
+
+                                    filaSeleccionada = asientoSeleccionado[0] - 'A';
+                                    columnaSeleccionada = asientoSeleccionado[1] - '1';
+
+                                    if (filaSeleccionada < 0 || filaSeleccionada >= 5 || columnaSeleccionada < 0 || columnaSeleccionada >= 8)
+                                    {
+                                        Console.WriteLine("El asiento seleccionado está fuera de los límites.");
+                                        continue;
+                                    }
+
+                                    asiento[filaSeleccionada, columnaSeleccionada] = 'O';
+                                }
+
+                                Console.WriteLine("\nEstado de los asientos:");
+                                Console.WriteLine("  1 2 3 4 5 6 7 8 ");
+
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    Console.Write((char)('A' + i) + " ");
+                                    for (int j = 0; j < 8; j++)
+                                    {
+                                        if (asiento[i, j] == 'O')
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                        }
+                                        Console.Write(asiento[i, j] + " ");
+                                        Console.ResetColor();
+                                    }
+                                    Console.WriteLine();
+                                }
+
+
+                                Console.WriteLine("Tu total a pagar es:" + " $" + entradas * 75);
+                                Console.WriteLine("Ingresa tu numero de tarjeta para pagar");
+                                int pago = int.Parse(Console.ReadLine());
+                                Console.WriteLine("Gracias por la compra!");
+
+                                return;
+
+                            }
+                        }
+
+                    case 3:
+                        {
+                            for (int i = 0; i < 5; i++)
+                            {
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    asiento[i, j] = '*';
+                                }
+                            }
+                            Console.WriteLine("Estado de los asientos:");
+                            Console.WriteLine("  1 2 3 4 5 ");
+
+                            for (int i = 0; i < 5; i++)
+                            {
+                                Console.Write((char)('A' + i) + " ");
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    Console.Write(asiento[i, j] + " ");
+                                }
+                                Console.WriteLine();
+                            }
+
+                            while (true)
+                            {
+                                Console.WriteLine("\nIngrese los asientos que desea seleccionar separados por comas (por ejemplo, A3,A4,B5,C6):");
+                                string input = Console.ReadLine().ToUpper();
+
+                                string[] asientosSeleccionados = input.Split(',');
+
+                                if (asientosSeleccionados.Length != entradas)
+                                {
+                                    Console.WriteLine("Debe seleccionar exactamente " + entradas + " asientos.");
+                                    continue;
+                                }
+
+                                for (int k = 0; k < asientosSeleccionados.Length; k++)
+                                {
+                                    string asientoSeleccionado = asientosSeleccionados[k];
+
+                                    if (asientoSeleccionado.Length != 2 || !char.IsLetter(asientoSeleccionado[0]) || !char.IsDigit(asientoSeleccionado[1]))
+                                    {
+                                        Console.WriteLine("Entrada no válida. Por favor, ingrese los asientos en el formato correcto (A-E1-5).");
+                                        continue;
+                                    }
+
+                                    filaSeleccionada = asientoSeleccionado[0] - 'A';
+                                    columnaSeleccionada = asientoSeleccionado[1] - '1';
+
+                                    if (filaSeleccionada < 0 || filaSeleccionada >= 5 || columnaSeleccionada < 0 || columnaSeleccionada >= 5)
+                                    {
+                                        Console.WriteLine("El asiento seleccionado está fuera de los límites.");
+                                        continue;
+                                    }
+
+                                    asiento[filaSeleccionada, columnaSeleccionada] = 'O';
+                                }
+
+                                Console.WriteLine("\nEstado de los asientos:");
+                                Console.WriteLine("  1 2 3 4 5 ");
+
+                                for (int i = 0; i < 5; i++)
+                                {
+                                    Console.Write((char)('A' + i) + " ");
+                                    for (int j = 0; j < 5; j++)
+                                    {
+                                        if (asiento[i, j] == 'O')
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                        }
+                                        Console.Write(asiento[i, j] + " ");
+                                        Console.ResetColor();
+                                    }
+                                    Console.WriteLine();
+                                }
+
+
+                                Console.WriteLine("Tu total a pagar es:" + " $" + entradas * 80);
+                                Console.WriteLine("Ingresa tu numero de tarjeta para pagar");
+                                int pago = int.Parse(Console.ReadLine());
+                                Console.WriteLine("Gracias por la compra!");
+
+                                return;
+
+                            }
+                        }
+
+                }
+
+                break;
+    
+
