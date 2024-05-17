@@ -326,6 +326,24 @@ class Estadio
 
                             }
                         }
+                         case 2:
+
+     while (entradas <= 0)
+     {
+         Console.WriteLine("Ingrese el número de asientos que desea reservar");
+         entradas = int.Parse(Console.ReadLine());
+
+         if (entradas <= 0)
+         {
+             Console.WriteLine("Número invalido, por favor ingrese otro valor");
+
+         }
+         else
+         {
+             Console.WriteLine("Usted a reservado" + " " + entradas + "  " + "entradas");
+         }
+     }
+
 
                 }
 
